@@ -1,3 +1,7 @@
+/*
+    Put all your eggs in one basket
+    Author : Divya Singh
+*/
 #include<bits/stdc++.h>
 using namespace std;
 

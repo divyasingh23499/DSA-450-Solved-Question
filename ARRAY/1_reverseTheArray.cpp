@@ -1,7 +1,11 @@
+/*
+    Put all your eggs in one basket
+    Author : Divya Singh
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
-#define int  long long int 
+#define int  long long int
 #define fast ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 void reverseTheArray(int arr[] , int sizeOfArray)
@@ -20,21 +24,21 @@ signed main(){
 	while (test--)
 	{
 		int n ;
-		cin >> n ; 
+		cin >> n ;
 		int arr[n];
-		//input 
+		//input
 		for (int i = 0 ; i < n ; i++)
 		{
 			cin >> arr[i];
 		}
-		
-		// processing 
+
+		// processing
 		reverseTheArray(arr , n);
-		
+
 		//output
 		for (int i = 0 ;  i < n ; i ++)
 		{
-			cout << arr[i] << " " ; 
+			cout << arr[i] << " " ;
 		}
 		cout << endl;
 	}
