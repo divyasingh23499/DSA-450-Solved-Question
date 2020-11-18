@@ -8,20 +8,29 @@ using namespace std;
 #define int  long long int
 #define fast ios_base::sync_with_stdio(false); cin.tie(NULL);
 
-//Time complexity of this method is (m + n) under the assumption that hash table search and insert operations take (1) time.
-int unionMethod1(int arr[] , int n , int brr[] , int m)
+//O(n*longn + m*logm + n)
+int intersectionMethod1(int arr[] , int n , int brr[] , int m)
 {   
-    set<int>s;
-    for (int i = 0 ;  i < n ; i ++)
+    int i = 0, j = 0 , count = 0;
+    while (i < n && j < m) 
     {
-        s.insert(arr[i]);
-    }
-    for (int i = 0 ;  i < m ; i ++)
-    {
-        s.insert(brr[i]);
-    }
-
-    return (s.size());
+        if (arr[i] > brr[j]) 
+        {
+            j++;
+        }
+        else if (brr[j] > arr[i]) 
+        {
+            i++;
+        }
+        else 
+        {
+            // when both are equal
+            count++;
+            i++;
+            j++;
+        }
+    }    
+    return count ;
 }
 
 signed main(){
@@ -47,7 +56,9 @@ signed main(){
         }
 
         //processing part
-        int ans = unionMethod1(arr , n , brr , m);
+        sort(arr , arr + n);
+        sort(brr , brr + m);
+        int ans = intersectionMethod1(arr , n , brr , m);
 
         //output part
         cout << ans << endl;
