@@ -8,7 +8,7 @@ using namespace std;
 #define int  long long int
 #define fast ios_base::sync_with_stdio(false); cin.tie(NULL);
 
-//O(n*longn + m*logm + n)
+//O(n)
 void oneTimeCyclicRotation(int arr[] , int sizeOfArray)
 {   
     int lastElement = arr[sizeOfArray - 1];
